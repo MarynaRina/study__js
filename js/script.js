@@ -1,10 +1,11 @@
-let money;
-let income;
-let addExpenses;
-let deposit;
-let mission;
-let period;
+let money = 600000;
+let income = 'freelance';
+let addExpenses = ['internet', 'books', 'utility bills'];
+let deposit = Boolean('Я стану крутым JS разработчиком');
+let mission = 1000000;
+let period = 3;
 
+// alert(deposit);
 
 alert('Прекрасный день для изучения JavaScript!!!');
 
