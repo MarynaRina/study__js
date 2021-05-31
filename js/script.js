@@ -23,12 +23,12 @@ let expenses2 = prompt('Введите обязательную статью р�
 let amount2 = Number(prompt('Во сколько это обойдется?', 11000));
 
 let budgetMonth = money - (amount1 + amount2);
-console.log('Бюджет на месяц: ', Math.ceil(budgetMonth));
+console.log('Бюджет на месяц: ', budgetMonth);
 
 let budgetDay = (budgetMonth / 30);
 console.log('Бюджет на день: ', Math.floor(budgetDay));
 
-console.log('Цель будет достигнута за: ', mission / budgetMonth);
+console.log('Цель будет достигнута за: ', Math.ceil(mission / budgetMonth));
 
 let array = addExpenses.split(",");
 console.log(array);
