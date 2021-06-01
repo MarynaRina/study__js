@@ -68,15 +68,3 @@ let getStatusIncome = function() {
 console.log(getStatusIncome());
 
 
-
-
-
-// const accumulatedMonth = function(money, expenses) {
-//     return getAccumulatedMonth(money, getExpensesMonth());
-// };
-
-
-// console.log(getTargetMonth());
-// alert('Прекрасный день для изучения JavaScript!!!');
-// console.log('Сегодня идёт дождь');
-
