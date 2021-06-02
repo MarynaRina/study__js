@@ -4,6 +4,7 @@ let isNumber = function(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
 };
 
+
 let money,
     income = 'freelance',
     addExpenses = prompt('Перечислите возможные расходы', 
@@ -28,20 +29,21 @@ showTypeOff(deposit);
 // 1. функция getExpensesMonth
 
 let expenses = [];
-
 const getExpensesMonth = function() {
     let sum = 0;
+    function func() {
+    sum += (function() {
+        let sum = 0;
+            do {
+                sum = prompt('Во сколько это обойдется?', 2000);
+            } while (!isNumber(sum));
+            return +sum;
+        })(); 
+    }
     for (let i = 0; i < 2; i++) {
         expenses[i] = prompt('Введите обязательную статью расходов', 'Лекарства, проезд');
-        
-        sum += +prompt('Во сколько это обойдется?', '6000');
-        if (!isNumber(sum)) {
-            console.log('это не строка');
-        } else {
-            return sum += +prompt('Во сколько это обойдется?', '6000'); 
-        }
-
-    }    
+        func();
+    }
     return sum;
 };
 
