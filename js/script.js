@@ -28,21 +28,20 @@ showTypeOff(deposit);
 
 // 1. функция getExpensesMonth
 
-let expenses = [];
-const getExpensesMonth = function() {
-    let sum = 0;
-    function func() {
-    sum += (function() {
-        let sum = 0;
+const func = function () {
+     let sum = 0;
             do {
                 sum = prompt('Во сколько это обойдется?', 2000);
             } while (!isNumber(sum));
             return +sum;
-        })(); 
-    }
+};
+
+let expenses = [];
+const getExpensesMonth = function() {
+    let sum = 0;
     for (let i = 0; i < 2; i++) {
         expenses[i] = prompt('Введите обязательную статью расходов', 'Лекарства, проезд');
-        func();
+        sum += func();
     }
     return sum;
 };
