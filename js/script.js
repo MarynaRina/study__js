@@ -132,7 +132,7 @@ appData.getExpensesMonth();
 appData.getBudget();
 
 const targetMonth = appData.getTargetMonth();
-
+console.log('Расходы: ' + appData.addExpenses.map((val, i) => val[0].toUpperCase() + val.slice(1)).join(', '));
 console.log('Расходы за месяц: ', appData.expensesMonth);
 console.log(targetMonth >= 0 ?
     `Цель будет достигнута за: ${targetMonth} месяцев)` :
@@ -144,6 +144,5 @@ for (let elem in appData) {
     console.log(elem, appData[elem]);
 }
 
-console.log('Расходы: ' + appData.addExpenses.map((val, i) => val[0].toUpperCase() + val.slice(1)).join(', '));
 
 
