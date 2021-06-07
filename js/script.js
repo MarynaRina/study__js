@@ -178,5 +178,5 @@ console.log('depositPercent: ', depositPercent);
 const targetAmount = document.querySelector('.target-amount');
 console.log('targetAmount: ', targetAmount);
 
-const periodSelect = document.querySelector('.period-select'); // range
+const periodSelect = document.querySelector('.period-select');
 console.log('periodSelect: ', periodSelect);
