@@ -159,20 +159,23 @@ const additionalIncomeItem = document.querySelectorAll('.additional_income-item'
 console.log('additionalIncomeItem: ', additionalIncomeItem);
 
 // RESULT
-const budgetMonthValue = document.querySelector('.budget_month-value');
+const budgetMonthValue = document.getElementsByClassName('budget_month-value');
 console.log('budgetMonthValue: ', budgetMonthValue);
-const budgetDayValue = document.querySelector('.budget_day-value');
+const budgetDayValue = document.getElementsByClassName('budget_day-value');
 console.log('budgetDayValue: ', budgetDayValue);
-const expensesMonthValue = document.querySelector('.expenses_month-value');
+const expensesMonthValue = document.getElementsByClassName('expenses_month-value');
 console.log('expensesMonthValue: ', expensesMonthValue);
-const additionalIncomeValue = document.querySelector('.additional_income-value');
+const additionalIncomeValue = document.getElementsByClassName('additional_income-value');
 console.log('additionalIncomeValue: ', additionalIncomeValue);
-const additionalExpensesValue = document.querySelector('.additional_expenses-value');
+const additionalExpensesValue = document.getElementsByClassName('additional_expenses-value');
 console.log('additionalExpensesValue: ', additionalExpensesValue);
-const incomePeriodValue = document.querySelector('.income_period-value');
+const incomePeriodValue = document.getElementsByClassName('income_period-value');
 console.log('incomePeriodValue: ', incomePeriodValue);
-const targetMonthValue = document.querySelector('.target_month-value');
+const targetMonthValue = document.getElementsByClassName('target_month-value');
 console.log('targetMonthValue: ', targetMonthValue);
+
+
+
 
 const salaryAmount = document.querySelector('.salary-amount');
 console.log('salaryAmount: ', salaryAmount);
