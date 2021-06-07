@@ -158,8 +158,21 @@ console.log('checkBox: ', depositCheck);
 const additionalIncomeItem = document.querySelectorAll('.additional_income-item');
 console.log('additionalIncomeItem: ', additionalIncomeItem);
 
-const resultBudgetValue = document.getElementsByClassName('result-total');
-console.log('resultBudgetValue: ', resultBudgetValue);
+// RESULT
+const budgetMonthValue = document.querySelector('.budget_month-value');
+console.log('budgetMonthValue: ', budgetMonthValue);
+const budgetDayValue = document.querySelector('.budget_day-value');
+console.log('budgetDayValue: ', budgetDayValue);
+const expensesMonthValue = document.querySelector('.expenses_month-value');
+console.log('expensesMonthValue: ', expensesMonthValue);
+const additionalIncomeValue = document.querySelector('.additional_income-value');
+console.log('additionalIncomeValue: ', additionalIncomeValue);
+const additionalExpensesValue = document.querySelector('.additional_expenses-value');
+console.log('additionalExpensesValue: ', additionalExpensesValue);
+const incomePeriodValue = document.querySelector('.income_period-value');
+console.log('incomePeriodValue: ', incomePeriodValue);
+const targetMonthValue = document.querySelector('.target_month-value');
+console.log('targetMonthValue: ', targetMonthValue);
 
 const salaryAmount = document.querySelector('.salary-amount');
 console.log('salaryAmount: ', salaryAmount);
