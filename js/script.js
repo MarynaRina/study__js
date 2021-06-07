@@ -144,5 +144,39 @@ for (let elem in appData) {
     console.log(elem, appData[elem]);
 }
 
+const getButtonStart = document.getElementById('start');
+console.log('buttonStart: ', getButtonStart);
 
+const incomeAdd = document.getElementsByTagName('button')[0];
+console.log('incomeAdd: ', incomeAdd);
+const expensesAdd = document.getElementsByTagName('button')[1];
+console.log('expensesAdd: ', expensesAdd);
 
+const depositCheck = document.querySelector('#deposit-check');
+console.log('checkBox: ', depositCheck);
+
+const additionalIncomeItem = document.querySelectorAll('.additional_income-item');
+console.log('additionalIncomeItem: ', additionalIncomeItem);
+
+const resultBudgetValue = document.getElementsByClassName('result-total');
+console.log('resultBudgetValue: ', resultBudgetValue);
+
+const salaryAmount = document.querySelector('.salary-amount');
+console.log('salaryAmount: ', salaryAmount);
+const incomeItems = document.querySelector('.income-items');
+console.log('incomeTitle: ', incomeItems.children[0]);
+console.log('incomeAmount: ', incomeItems.children[1]);
+const expensesItems = document.querySelector('.expenses-items');
+console.log('expensesTitle: ', expensesItems.children[0]);
+console.log('expensesAmount: ', expensesItems.children[1]);
+const additionalExpensesItem = document.querySelector('.additional_expenses-item');
+console.log('additionalExpensesItem: ', additionalExpensesItem);
+const depositAmount = document.querySelector('.deposit-amount');
+console.log('depositAmount: ', depositAmount);
+const depositPercent = document.querySelector('.deposit-percent');
+console.log('depositPercent: ', depositPercent);
+const targetAmount = document.querySelector('.target-amount');
+console.log('targetAmount: ', targetAmount);
+
+const periodSelect = document.querySelector('.period-select'); // range
+console.log('periodSelect: ', periodSelect);
