@@ -45,6 +45,8 @@ let appData = {
     budgetDay: 0,
     budgetMonth: 0,
     expensesMonth: 0,
+
+    
     start: function() {
         this.getExpenses();
         this.getIncome();
@@ -57,10 +59,17 @@ let appData = {
         if (start.textContent === 'Рассчитать') {
             this.blockInputs();
             start.textContent = 'Сбросить';
+            
+            
         } else {
             start.textContent = 'Рассчитать';
             this.reset();
+            
+            this.getExpenses();
+            
         }
+        
+        
     },
     blockInputs: (disabled = true) => {
         document.querySelectorAll('.data input[type=text]').forEach(item => {
@@ -77,11 +86,26 @@ let appData = {
         incomePlus.style.display = '';
         expensesPlus.style.display = '';
         this.blockInputs(false);
-        document.querySelectorAll('input[type=text]').forEach(item => {
-            item.value = '';
-        });
+        var inputs = document.querySelectorAll('input[type=text]');
+        for (var i = 0;  i < inputs.length; i++) {
+            inputs[i].value = '';
+        }
+        
         this.getBudget();
         periodSelect.value = document.querySelector('.period-amount').textContent = 1;
+
+        this.budget = 0;
+        this.budgetDay = 0;
+        this.budgetMonth = 0;
+        this.income = {};
+        this.incomeMonth = 0;
+        this.addIncome = [];
+        this.expenses = {};
+        this.expensesMonth = 0;
+        this.addExpenses = [];
+        this.deposit = false;
+        this.precentDeposit = 0;
+        this.moneyDeposit = 0;
         this.blockStart();
     },
     showResult: function() {
@@ -202,25 +226,25 @@ let appData = {
     blockStart: function() {
         start.disabled = !salaryAmount.value.trim();
     }
+ 
 };
-
+        
 const foo = appData.start.bind(appData);
 
 appData.blockStart();
 start.addEventListener('click', foo);
-
 expensesPlus.addEventListener('click', appData.addExpensesBlock);
 incomePlus.addEventListener('click', appData.addIncomeBlock);
 periodSelect.addEventListener('input', appData.changePeriodSelect);
 salaryAmount.addEventListener('input', appData.blockStart);
 
 document.querySelectorAll('[placeholder="Наименование"]').forEach(input => {
-    input.addEventListener('change', function(){
+    input.addEventListener('input', function(){
          this.value = this.value.replace(/[^а-я ]/g, '');
     });
 });
 document.querySelectorAll('[placeholder="Сумма"]').forEach(input => {
-    input.addEventListener('change', function () {
+    input.addEventListener('input', function () {
         this.value = this.value.replace(/[^\d]/g, '');
     });
 });
