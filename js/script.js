@@ -192,47 +192,15 @@ incomePlus.addEventListener('click', appData.addIncomeBlock);
 periodSelect.addEventListener('input', appData.changePeriodSelect);
 salaryAmount.addEventListener('input', appData.blockStart);
 
-const addEventChangeNumber = function(event) {
-    let value = event.target.value;
-    const changeInputNumber = function(event) {
-         if (!/^[\d]+$/.test(event.target.value)) {
-            alert('Можно ввести только цифры!');
-            event.target.value = value;
-            event.target.removeEventListener('change', changeInputNumber);
-        }
-        value = event.target.value;
-    };
-    event.target.addEventListener('change', changeInputNumber);
-};
-const addEventChangeText = function(event) {
-    let value = event.target.value;
-    const changeInputText = function(event) {
-        if (!/^[,. а-яА-ЯёЁ]+$/.test(event.target.value)) {
-            alert('Можно ввести только русские буквы, пробелы, точки и запятые!');
-            event.target.value = value;
-            event.target.removeEventListener('change', changeInputText);
-        }
-        value = event.target.value;
-    };
-    event.target.addEventListener('change', changeInputText);
-};
-document.querySelectorAll('[placeholder="Наименование"]').forEach(function(input){
-    input.addEventListener('focus', addEventChangeText);
+document.querySelectorAll('[placeholder="Наименование"]').forEach(input => {
+    input.addEventListener('change', function(){
+         this.value = this.value.replace(/[^а-я ]/g, '');
+    });
 });
-document.querySelectorAll('[placeholder="Сумма"]').forEach(function(input){
-    input.addEventListener('focus', addEventChangeNumber);
+document.querySelectorAll('[placeholder="Сумма"]').forEach(input => {
+    input.addEventListener('change', function () {
+        this.value = this.value.replace(/[^\d]/g, '');
+    });
 });
 
-const targetMonth = appData.getTargetMonth();
-console.log('Расходы: ' + appData.addExpenses.map((val, i) => val[0].toUpperCase() + val.slice(1)).join(', '));
-
-console.log(targetMonth >= 0 ?
-    `Цель будет достигнута за: ${targetMonth} месяцев)` :
-    'Цель не будет достигнута');
-
-
-console.log('Наша программа включает в себя данные: ');
-for (let elem in appData) {
-    console.log(elem, appData[elem]);
-}
 
