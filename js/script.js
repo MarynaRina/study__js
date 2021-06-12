@@ -57,7 +57,36 @@ let appData = {
         appData.getBudget();
 
         appData.showResult();
-        
+
+        if (start.textContent === 'Рассчитать') {
+            this.blockInputs();
+            start.textContent = 'Сбросить';
+        } else {
+            start.textContent = 'Рассчитать';
+            this.reset();
+        }
+    },
+    blockInputs: (disabled = true) => {
+        document.querySelectorAll('.data input[type=text]').forEach(item => {
+            item.disabled = disabled;
+        });
+    },
+    reset: function() {
+        for (let i = incomeItems.length - 1; i > 0; i--) {
+            incomeItems[0].parentNode.removeChild(incomeItems[i]);
+        }
+        for (let i = expensesItems.length - 1; i > 0; i--) {
+            expensesItems[0].parentNode.removeChild(expensesItems[i]);
+        }
+        incomePlus.style.display = '';
+        expensesPlus.style.display = '';
+        this.blockInputs(false);
+        document.querySelectorAll('input[type=text]').forEach(item => {
+            item.value = '';
+        });
+        this.getBudget();
+        periodSelect.value = document.querySelector('.period-amount').textContent = 1;
+        this.blockStart();
     },
     showResult: function() {
         budgetMonthValue.value = +appData.budgetMonth;
@@ -138,6 +167,7 @@ let appData = {
         }
     },
     getBudget: function(){
+        appData.budget = +salaryAmount.value
         appData.budgetMonth = appData.budget + appData.incomeMonth - appData.expensesMonth;
         appData.budgetDay = Math.floor(+appData.budgetMonth / 30);
     },
@@ -193,12 +223,12 @@ periodSelect.addEventListener('input', appData.changePeriodSelect);
 salaryAmount.addEventListener('input', appData.blockStart);
 
 document.querySelectorAll('[placeholder="Наименование"]').forEach(input => {
-    input.addEventListener('change', function(){
+    input.addEventListener('input', function(){
          this.value = this.value.replace(/[^а-я ]/g, '');
     });
 });
 document.querySelectorAll('[placeholder="Сумма"]').forEach(input => {
-    input.addEventListener('change', function () {
+    input.addEventListener('input', function () {
         this.value = this.value.replace(/[^\d]/g, '');
     });
 });
