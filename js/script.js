@@ -103,7 +103,6 @@ AppData.prototype.reset = function() {
     this.deposit = false;
     this.precentDeposit = 0;
     this.moneyDeposit = 0;
-    
     this.blockStart();
 };
 
@@ -142,7 +141,7 @@ AppData.prototype.addIncomeBlock = function() {
 
 AppData.prototype.getExpenses = function() {
     const _this = this;
-    expensesItems.forEach(item => {             //???????
+    expensesItems.forEach(item => {             
             const itemExpenses = item.querySelector('.expenses-title').value;
             const cashExpenses = item.querySelector('.expenses-amount').value;
             if (itemExpenses !== '' && cashExpenses !== '') {
@@ -220,21 +219,21 @@ AppData.prototype.getStatusIncome = function(){
     }
 };
 
-// AppData.prototype.getInfoDeposit = function(){
-//     this.deposit = confirm('Есть ли у вас депозит в банке?');
-//         if (this.deposit) {
-//         let n = 0;
-//         do {
-//             n = prompt('Какой годовой процент?', '10');
-//         } while (!isNumber(n) && n > 0);
-//         this.precentDeposit = +n;
-//         do {
-//             this.moneyDeposit = prompt('Какая сумма заложена?', 10000);
-//         } while (!isNumber(n) && n > 0);
-//         this.moneyDeposit = +n;
-//     }
-//      // this.moneyDeposit = 0;
-// };
+AppData.prototype.getInfoDeposit = function(){
+    // this.deposit = confirm('Есть ли у вас депозит в банке?');
+    //     if (this.deposit) {
+    //     let n = 0;
+    //     do {
+    //         n = prompt('Какой годовой процент?', '10');
+    //     } while (!isNumber(n) && n > 0);
+    //     this.precentDeposit = +n;
+    //     do {
+    //         this.moneyDeposit = prompt('Какая сумма заложена?', 10000);
+    //     } while (!isNumber(n) && n > 0);
+    //     this.moneyDeposit = +n;
+    // }
+    this.moneyDeposit = 0;
+};
 
 AppData.prototype.calcPeriod = function(){
     return this.budgetMonth * periodSelect.value;
