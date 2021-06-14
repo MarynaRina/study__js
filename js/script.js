@@ -49,6 +49,8 @@ const AppData = function() {
     this.deposit = false;
     this.precentDeposit = 0;
     this.moneyDeposit = 0;
+    this.expensesItems = 0;
+
 };
 
 AppData.prototype.start = function(){
@@ -117,6 +119,7 @@ AppData.prototype.reset = function() {
 
 AppData.prototype.showResult = function() {
     const _this = this;
+    
     budgetMonthValue.value = this.budgetMonth;
         budgetDayValue.value = Math.floor(this.budgetDay * 100) / 100;
         expensesMonthValue.value = this.expensesMonth;
@@ -124,6 +127,7 @@ AppData.prototype.showResult = function() {
         additionalIncomeValue.value = this.addIncome.join(', ');
         targetMonthValue.value = Math.ceil(this.getTargetMonth());
         incomePeriodValue.value = _this.calcPeriod();
+        
 };
 
 AppData.prototype.addExpensesBlock = function() {
@@ -147,6 +151,8 @@ AppData.prototype.addExpensesBlock = function() {
             this.value = this.value.replace(/[^\d]/g, '');
         });
     });
+    expensesItems = document.querySelectorAll('.expenses-items');
+        incomeItems = document.querySelectorAll('.income-items');
 };
 
 AppData.prototype.addIncomeBlock = function() {
@@ -192,7 +198,6 @@ AppData.prototype.getIncome = function() {
             const cashIncome = item.querySelector('.income-amount').value;
             if (itemIncome !== '' && cashIncome !== '') {
                 _this.income[itemIncome] = +cashIncome;
-                _this.incomeMonth += +cashIncome;
             }
     });
 
