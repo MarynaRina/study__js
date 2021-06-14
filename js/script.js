@@ -143,11 +143,7 @@ AppData.prototype.addIncomeBlock = function() {
         if (incomeItems.length === 3) {
             incomePlus.style.display = 'none';
         }
-        namePlace.forEach(input => {
-        input.addEventListener('input', function(){
-            this.value = this.value.replace(/[^а-я ]/g, '');
-        });
-    });
+        
 };
 
 AppData.prototype.getExpenses = function() {
