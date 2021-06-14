@@ -165,8 +165,8 @@ AppData.prototype.addIncomeBlock = function() {
         if (incomeItems.length === 3) {
             incomePlus.style.display = 'none';
         }      
-        namePlace =  document.querySelectorAll('[placeholder="Наименование"]');
-        sumPlace = document.querySelectorAll('[placeholder="Сумма"]');
+        namePlace =  cloneIncomeItem.querySelectorAll('[placeholder="Наименование"]');
+        sumPlace = cloneIncomeItem.querySelectorAll('[placeholder="Сумма"]');
         namePlace.forEach(input => {
         input.addEventListener('input', function(){
             this.value = this.value.replace(/[^а-я ]/g, '');
