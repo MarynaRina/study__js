@@ -180,12 +180,12 @@ AppData.prototype.addExpIncBlock = function(event) {
 
 AppData.prototype.getAddExpInc = function () {
     
-    const joinElem = item => {
+    const addElem = item => {
         return item.map(el => el.trim()).filter(el => el !== '');
     };
 
-    this.addExpenses = joinElem(additionalExpensesItem.value.split(','));
-    this.addIncome = joinElem([additionalIncomeItem[0].value, additionalIncomeItem[1].value]);
+    this.addExpenses = addElem(additionalExpensesItem.value.split(','));
+    this.addIncome = addElem([additionalIncomeItem[0].value, additionalIncomeItem[1].value]);
 };
 
 
