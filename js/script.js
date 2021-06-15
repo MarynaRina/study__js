@@ -67,7 +67,6 @@ class AppData {
         } else {
             start.textContent = 'Рассчитать';
             _this.reset();
-            // _this.getExpInc(); 
         } 
     }
 
@@ -88,12 +87,7 @@ class AppData {
         };
         excessRemoval(document.querySelectorAll('.income-items'));
         excessRemoval(document.querySelectorAll('.expenses-items'));
-        // for (let i = incomeItems.length - 1; i > 0; i--) {
-        //     incomeItems[0].parentNode.removeChild(incomeItems[i]);
-        // }
-        // for (let i = expensesItems.length - 1; i > 0; i--) {
-        //     expensesItems[0].parentNode.removeChild(expensesItems[i]);
-        // }
+        
         this.blockInputs(false);
 
         incomePlus.style.display = '';
