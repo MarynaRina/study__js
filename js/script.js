@@ -107,6 +107,7 @@ class AppData {
         });
         
         periodSelect.value = periodAmount.textContent = 1;
+        incomeItems = document.querySelectorAll('.income-items');
         expensesItems = document.querySelectorAll('.expenses-items');
         this.budget = 0;
         this.budgetDay = 0;
@@ -122,7 +123,6 @@ class AppData {
         this.moneyDeposit = 0;
         this.expensesItems = 0;
         
-        incomeItems = document.querySelectorAll('.income-items');
         this.blockStart();
         
     }
