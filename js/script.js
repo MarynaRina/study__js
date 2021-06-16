@@ -37,6 +37,7 @@ let isNumber = function(n) {
         return !isNaN(parseFloat(n)) && isFinite(n);
 };
 
+
 // НАЧАЛО
 
 class AppData {
@@ -181,8 +182,8 @@ class AppData {
         });
         
         
-            expensesItems = document.querySelectorAll('.expenses-items');
-            incomeItems = document.querySelectorAll('.income-items');
+        expensesItems = document.querySelectorAll('.expenses-items');
+        incomeItems = document.querySelectorAll('.income-items');
     }
 
     getAddExpInc(){
@@ -269,7 +270,6 @@ class AppData {
         
     }
     
-
     depositHandler(){
         if(depositCheck.checked) {
             depositBank.style.display = 'inline-block';
@@ -323,11 +323,11 @@ class AppData {
             });
         });
         
-        
         depositCheck.addEventListener('change', this.depositHandler.bind(this));
-        
     }
+
 }
+
 
 
 
