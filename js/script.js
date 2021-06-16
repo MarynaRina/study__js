@@ -107,7 +107,7 @@ class AppData {
         });
         
         periodSelect.value = periodAmount.textContent = 1;
-        
+        expensesItems = document.querySelectorAll('.expenses-items');
         this.budget = 0;
         this.budgetDay = 0;
         this.budgetMonth = 0;
@@ -122,9 +122,9 @@ class AppData {
         this.moneyDeposit = 0;
         this.expensesItems = 0;
         
-        this.blockStart();
-        expensesItems = document.querySelectorAll('.expenses-items');
         incomeItems = document.querySelectorAll('.income-items');
+        this.blockStart();
+        
     }
 
     showResult(){
@@ -180,8 +180,6 @@ class AppData {
             this.value = this.value.replace(/[^\d]/g, '');
             });
         });
-        
-        
         expensesItems = document.querySelectorAll('.expenses-items');
         incomeItems = document.querySelectorAll('.income-items');
     }
